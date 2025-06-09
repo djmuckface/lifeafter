@@ -18,6 +18,15 @@ body {
     padding: 20px;
 }
 
+.hero-section {
+    background: white;
+    border-radius: 24px;
+    padding: 30px 25px;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 40px rgba(52, 152, 219, 0.08);
+    border: 1px solid rgba(52, 152, 219, 0.1);
+}
 
 .logo-container {
     margin-bottom: 20px;
