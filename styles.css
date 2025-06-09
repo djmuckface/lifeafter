@@ -459,4 +459,13 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+    /* Force center alignment for all main sections */
+.hero-section,
+.trust-section,
+.form-section,
+.footer {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
 }
