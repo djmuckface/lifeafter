@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-    max-width: 250px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -21,7 +21,7 @@ body {
 .hero-section {
     background: white;
     border-radius: 24px;
-    padding: 30px 25px;
+    padding: 60px 50px;
     text-align: center;
     margin-bottom: 30px;
     box-shadow: 0 10px 40px rgba(52, 152, 219, 0.08);
@@ -29,7 +29,7 @@ body {
 }
 
 .logo-container {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .logo {
