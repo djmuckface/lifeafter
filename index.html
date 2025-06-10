@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Life After - Share Your Story</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="logo-life-after.png" alt="Life After Logo" class="logo" />
+      <h1 class="headline">Tell Your Story</h1>
+    </header>
+
+    <main>
+      <p class="description">
+        Life After is a new documentary series featuring real people who have experienced deep pain and found a path to healing. If you've made it through a mental health challenge and are open to being interviewed, we'd love to hear from you.
+      </p>
+
+      <form action="https://formspree.io/f/myzjebel" method="POST" class="story-form">
+        <label>Name (nickname or first name only):<input type="text" name="name" required /></label>
+        <label>Email:<input type="email" name="email" required /></label>
+        <label>What kind of trauma or mental health challenge have you experienced?<textarea name="trauma" required></textarea></label>
+        <label>What helped you recover?<textarea name="recovery" required></textarea></label>
+        <label>Are you open to sharing your story on camera?
+          <select name="camera" required>
+            <option value="">Please select...</option>
+            <option value="yes">Yes, I'm ready</option>
+            <option value="maybe">Maybe – let's talk</option>
+            <option value="no">No, but I wanted to share</option>
+          </select>
+        </label>
+        <label>Additional thoughts (optional):<textarea name="additional"></textarea></label>
+        <button type="submit">Submit & Be Considered</button>
+      </form>
+    </main>
+
+    <footer>
+      <div class="footer-section">
+        <ul class="trauma-list">
+          <li>Job Loss</li>
+          <li>Grief</li>
+          <li>Addiction</li>
+          <li>Bullying</li>
+          <li>Suicidal Ideation</li>
+          <li>And more...</li>
+        </ul>
+        <p>If you or someone you know would like to help by sharing your story, we would love to hear from you.</p>
+      </div>
+
+      <div class="footer-section">
+        <p><strong>We understand how sensitive this is.</strong><br>
+        Every submission is private and reviewed with care. You'll only move forward if you're comfortable.</p>
+        <ul class="assurance-list">
+          <li>Anonymous to start</li>
+          <li>Trauma-informed interviewing</li>
+          <li>Safe, judgment-free process</li>
+          <li>Guided by a respectful film team</li>
+          <li>You're in control at every step</li>
+          <li>Professional mental health support available</li>
+        </ul>
+        <p><strong>Life After Documentary Series</strong><br>
+        A safe space for sharing stories of recovery and hope<br>
+        Contact us: <a href="mailto:info@lifeafterseries.org">info@lifeafterseries.org</a></p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
