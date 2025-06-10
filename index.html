@@ -1,102 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Life After - Share Your Story of Recovery</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Life After</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="container">
-        <!-- Hero Section -->
-        <div class="hero-section" id="hero">
-            <div class="container">
-        <!-- Hero Section -->
-               <div class="logo-container">
-    <img src="logo-life-after.png" alt="Life After Logo" style="max-width: 50%; height: auto; margin-bottom: 20px;">
-</div>
-            </div>
-            </div>
-            <h1 class="hero-title">Have You Found Life After Trauma?</h1>
-            <p class="hero-subtitle">Share your story of recovery to help others find hope.<br><br>Life After is a new documentary series featuring real people who have experienced deep pain and found a path to healing. If you've made it through a mental health challenge and are open to being interviewed, we'd love to hear from you.</p>
-            <button class="cta-button" onclick="showForm()">Tell Us Your Story →</button>
-        </div>
+    <header class="header">
+        <img src="logo-life-after.png" alt="Life After Logo" class="logo" />
+    </header>
 
-        <!-- Trust Building Section -->
-        <div class="trust-section" id="trust">
-            <h2 class="trust-title">We understand how sensitive this is. Every submission is private and reviewed with care. You'll only move forward if you're comfortable.</h2>
-            <div class="trust-items">
-                <div class="trust-item"><span>Anonymous to start</span></div>
-                <div class="trust-item"><span>Trauma-informed interviewing</span></div>
-                <div class="trust-item"><span>Safe, judgment-free process</span></div>
-                <div class="trust-item"><span>Guided by a respectful film team</span></div>
-                <div class="trust-item"><span>You're in control at every step</span></div>
-                <div class="trust-item"><span>Professional mental health support available</span></div>
-            </div>
-        </div>
+    <main class="main-content">
+        <h1>Share Your Story of Recovery</h1>
+        <p>
+            Life After is a documentary series about people who have moved through trauma and into healing. Your story could help someone else take the first step.
+        </p>
+        <a href="#formSection" class="cta-button">Tell Us Your Story</a>
+    </main>
 
-        <!-- Form Section -->
-        <div class="form-section" id="formSection">
-            <button class="back-button" onclick="hideForm()">← Back to Home</button>
-            <h2 class="form-title">Your Story Matters</h2>
-            <p class="form-subtitle">Let's start here. Take your time and share what feels right.</p>
-            
-            <form id="storyForm" action="https://formspree.io/f/myzjebel" method="POST">
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="name">Name (can be a nickname or first name only) *</label>
-                        <input type="text" id="name" name="name" placeholder="How would you like us to address you?" required>
-                    </div>
+    <section class="form-section" id="formSection">
+        <h2>Your Story Matters</h2>
+        <form action="https://formspree.io/f/myzjebel" method="POST">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" required />
 
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
-                    </div>
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required />
 
-                    <div class="form-group">
-                        <label for="trauma">What kind of trauma or mental health challenge have you experienced? *</label>
-                        <textarea id="trauma" name="trauma" placeholder="Please share as much or as little as you're comfortable with. There's no right or wrong way to describe your experience..." required></textarea>
-                    </div>
+            <label for="trauma">What kind of trauma have you experienced? *</label>
+            <textarea id="trauma" name="trauma" required></textarea>
 
-                    <div class="form-group">
-                        <label for="recovery">What helped you begin to recover or find your way out? *</label>
-                        <textarea id="recovery" name="recovery" placeholder="Therapy, support groups, medication, family, faith, time, community, creative expression... whatever made a difference for you" required></textarea>
-                    </div>
+            <label for="recovery">What helped you begin to heal? *</label>
+            <textarea id="recovery" name="recovery" required></textarea>
 
-                    <div class="form-group">
-                        <label for="camera">Are you open to sharing your story on camera? *</label>
-                        <select id="camera" name="camera" required>
-                            <option value="">Please select...</option>
-                            <option value="yes">Yes, I'm ready to share</option>
-                            <option value="maybe">Maybe – I'd like to talk first</option>
-                            <option value="no">No, but I wanted to share my story</option>
-                        </select>
-                    </div>
+            <label for="camera">Are you open to sharing on camera? *</label>
+            <select id="camera" name="camera" required>
+                <option value="">Please select...</option>
+                <option value="yes">Yes</option>
+                <option value="maybe">Maybe</option>
+                <option value="no">No</option>
+            </select>
 
-                    <div class="form-group">
-                        <label for="additional">Anything else you'd like us to know? (optional)</label>
-                        <textarea id="additional" name="additional" placeholder="Any concerns, questions, hopes, or additional context you'd like to share with our team..."></textarea>
-                    </div>
-                </div>
+            <label for="additional">Anything else to share?</label>
+            <textarea id="additional" name="additional"></textarea>
 
-                <button type="submit" class="submit-button">Submit & Be Considered for the Series</button>
-            </form>
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </section>
 
-            <div class="success-message" id="successMessage">
-                <h3>Thank you for trusting us with your story.</h3>
-                <p>We've received your submission and will review it with the care and respect it deserves.</p>
-                <p>If we feel you might be a good fit for the series, we'll reach out within 2-3 weeks to discuss next steps.</p>
-                <p><strong>Remember: You're in control every step of the way.</strong></p>
-            </div>
-        </div>
-
-        <div class="footer">
-            <p><strong>Life After Documentary Series</strong></p>
-            <p>A safe space for sharing stories of recovery and hope</p>
-            <p>Contact us: <a href="mailto:info@lifeafterseries.org">info@lifeafterseries.org</a></p>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+    <footer class="footer">
+        <p>© 2025 Life After Documentary Series</p>
+        <p><a href="mailto:info@lifeafterseries.org">info@lifeafterseries.org</a></p>
+    </footer>
 </body>
 </html>
