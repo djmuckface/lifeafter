@@ -1,103 +1,463 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Life After - Share Your Story</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life After... | Share Your Story of Hope</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #4dd0e1 0%, #26c6da 50%, #00acc1 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            margin-bottom: 40px;
+            border-bottom: 2px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .tagline {
+            font-style: italic;
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* Poster Section */
+        .poster-section {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .poster-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .poster-image:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Hero Section - Now Supporting Content */
+        .hero {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            color: #333;
+            border-radius: 20px;
+            padding: 50px 40px;
+            margin-bottom: 40px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 20px;
+            font-weight: 300;  
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #555;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .hero .highlight {
+            color: #764ba2;
+            font-weight: 600;
+        }
+
+        /* Call to Action */
+        .cta-section {
+            background: linear-gradient(135deg, #26c6da 0%, #00acc1 100%);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* About Section */
+        .about-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 50px 40px;
+            margin-bottom: 40px;
+        }
+
+        .about-section h2 {
+            font-size: 2.5rem;
+            color: #00acc1;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 300;
+        }
+
+        .about-section p {
+            font-size: 1.2rem;
+            color: #555;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Questionnaire Section */
+        .questionnaire-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 50px 40px;
+            margin-bottom: 40px;
+        }
+
+        .questionnaire-section h2 {
+            font-size: 2.5rem;
+            color: #00acc1;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 300;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #26c6da;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+            margin: 0;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #26c6da 0%, #00acc1 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 30px auto 0;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(38, 198, 218, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 2px solid rgba(102, 126, 234, 0.2);
+        }
+
+        footer p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .poster-image {
+                max-width: 100%;
+                border-radius: 15px;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero,
+            .cta-section,
+            .about-section,
+            .questionnaire-section {
+                padding: 30px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
     <header>
-      <img src="logo-life-after.png" alt="Life After Logo" class="logo" />
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">Life After...</a>
+                <div class="tagline">Stories of Hope & Transformation</div>
+            </div>
+        </div>
     </header>
 
-<main>
-  <div class="description">
-    Life After is an innovative, survivor-driven TV series that aims to offer hope and resources for individuals facing mental health challenges. Starting with depression, the show will feature raw, personal stories of recovery, allowing viewers to relate and learn about various mental health treatment paths in an unbiased, non-commercialized manner. The program will expand to become a broader platform for mental health education and support. Proceeds will be donated to support mental health initiatives.
-  </div>
+    <div class="container">
+        <section class="poster-section">
+            <img src="poster-flyer.png" alt="Life After Docuseries Poster - Have you gone through a transformative mental health journey?" class="poster-image">
+        </section>
 
-  <h2 class="form-title">Share Your Experience</h2>
+        <section class="hero">
+            <h2>Your Story Matters</h2>
+            <p>
+                We're looking for brave individuals who have walked through the darkness of mental health challenges and found their way to healing and hope. Your journey—whether it involved <span class="highlight">depression, anxiety, trauma, addiction, grief, or any other struggle</span>—has the power to inspire and guide others who are still fighting their battles.
+            </p>
+            <p>
+                By sharing your story with our documentary series, you become part of a movement to break stigmas, offer hope, and remind others that recovery is possible. Your voice could be exactly what someone needs to hear today.
+            </p>
+        </section>
 
-  <form action="https://formspree.io/f/myzjebel" method="POST" class="story-form">
-    <div class="form-group">
-      <label for="name">Name (nickname or first name only):</label>
-      <input type="text" id="name" name="name" required />
-    </div>
-    
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required />
-    </div>
-    
-    <div class="form-group">
-      <label for="trauma">What kind of trauma or mental health challenge have you experienced?</label>
-      <textarea id="trauma" name="trauma" required></textarea>
-    </div>
-    
-    <div class="form-group">
-      <label for="recovery">What helped you recover?</label>
-      <textarea id="recovery" name="recovery" required></textarea>
-    </div>
-    
-    <div class="form-group">
-      <label for="camera">Are you open to sharing your story on camera?</label>
-      <select id="camera" name="camera" required>
-        <option value="">Please select...</option>
-        <option value="yes">Yes, I'm ready</option>
-        <option value="maybe">Maybe – let's talk</option>
-        <option value="no">No, but I wanted to share</option>
-      </select>
-    </div>
-    
-    <div class="form-group">
-      <label for="additional">Additional thoughts (optional):</label>
-      <textarea id="additional" name="additional"></textarea>
-    </div>
-    
-    <button type="submit">Share Your Story</button>
-  </form>
-</main>
+        <section class="cta-section">
+            <h2>About Life After</h2>
+            <p>An innovative, survivor-driven TV series offering hope and resources for individuals facing mental health challenges. Starting with depression, our show features raw, personal stories of recovery, allowing viewers to relate and learn about various mental health treatment paths in an unbiased, non-commercialized manner. The program will expand to become a broader platform for mental health education and support, with proceeds donated to support mental health initiatives.</p>
+        </section>
 
-<footer>
-  <div class="footer-content">
-    <div class="footer-section">
-      <h3>We Welcome Stories About</h3>
-      <ul class="trauma-list">
-        <li>Job Loss</li>
-        <li>Grief</li>
-        <li>Addiction</li>
-        <li>Bullying</li>
-        <li>Suicidal Ideation</li>
-        <li>And more...</li>
-      </ul>
-      <p>If you or someone you know would like to help by sharing your story, we would love to hear from you.</p>
+        <section class="about-section">
+            <h2>Ready to Share Your Experience?</h2>
+            <p>
+                We believe every story matters and has the power to inspire hope in others. Whether your journey involved depression, anxiety, trauma, addiction, or any other mental health challenge, your experience of transformation can light the way for someone else who is struggling.
+            </p>
+        </section>
+
+        <section class="questionnaire-section">
+            <h2>Share Your Experience</h2>
+            <form id="questionnaire-form">
+                <div class="form-group">
+                    <label for="name">Name (or preferred pseudonym):</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number (optional):</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Age Range:</label>
+                    <select id="age" name="age" required>
+                        <option value="">Select your age range</option>
+                        <option value="18-25">18-25</option>
+                        <option value="26-35">26-35</option>
+                        <option value="36-45">36-45</option>
+                        <option value="46-55">46-55</option>
+                        <option value="56-65">56-65</option>
+                        <option value="65+">65+</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Which mental health challenges have you experienced? (Select all that apply):</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="depression" name="challenges" value="depression">
+                            <label for="depression">Depression</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="anxiety" name="challenges" value="anxiety">
+                            <label for="anxiety">Anxiety</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="ptsd" name="challenges" value="ptsd">
+                            <label for="ptsd">PTSD</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="addiction" name="challenges" value="addiction">
+                            <label for="addiction">Addiction</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="grief" name="challenges" value="grief">
+                            <label for="grief">Grief</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="abuse" name="challenges" value="abuse">
+                            <label for="abuse">Abuse</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="bullying" name="challenges" value="bullying">
+                            <label for="bullying">Bullying</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="job-loss" name="challenges" value="job-loss">
+                            <label for="job-loss">Job Loss</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="miscarriage" name="challenges" value="miscarriage">
+                            <label for="miscarriage">Miscarriage</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="suicide" name="challenges" value="suicide">
+                            <label for="suicide">Suicidal Thoughts</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="story">Tell us about your transformative journey (brief summary):</label>
+                    <textarea id="story" name="story" placeholder="Share your story of realization, the work you've done, and how you maintain your wellness..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="motivation">What motivates you to share your story?</label>
+                    <textarea id="motivation" name="motivation" placeholder="How do you hope your story will help others?" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="comfort-level">How comfortable would you be appearing on camera?</label>
+                    <select id="comfort-level" name="comfort-level" required>
+                        <option value="">Select your comfort level</option>
+                        <option value="very-comfortable">Very comfortable - full face and name</option>
+                        <option value="somewhat-comfortable">Somewhat comfortable - with some privacy measures</option>
+                        <option value="not-comfortable">Not comfortable - voice only or written story</option>
+                        <option value="unsure">Unsure - would like to discuss options</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="additional-info">Any additional information you'd like to share:</label>
+                    <textarea id="additional-info" name="additional-info" placeholder="Anything else you think we should know about your journey or how you'd like to be involved..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Share My Story</button>
+            </form>
+        </section>
     </div>
 
-    <div class="footer-section">
-      <h3>Our Promise to You</h3>
-      <p><strong>We understand how sensitive this is.</strong><br>
-      Every submission is private and reviewed with care. You'll only move forward if you're comfortable.</p>
-      <ul class="assurance-list">
-        <li>Anonymous to start</li>
-        <li>Trauma-informed interviewing</li>
-        <li>Safe, judgment-free process</li>
-        <li>Guided by a respectful film team</li>
-        <li>You're in control at every step</li>
-        <li>Professional mental health support available</li>
-      </ul>
-    </div>
-  </div>
-  
-  <div class="contact-info">
-    <h4>Life After Documentary Series</h4>
-    <p>A safe space for sharing stories of recovery and hope</p>
-    <p>Contact us: <a href="mailto:info@lifeafterseries.org">info@lifeafterseries.org</a></p>
-  </div>
-</footer>
-```
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Life After Docuseries. Inspiring hope through shared stories of transformation.</p>
+        </div>
+    </footer>
 
-  </div>
+    <script>
+        document.getElementById('questionnaire-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = new FormData(this);
+            const data = {};
+            
+            // Handle regular inputs
+            for (let [key, value] of formData.entries()) {
+                if (key === 'challenges') {
+                    if (!data[key]) data[key] = [];
+                    data[key].push(value);
+                } else {
+                    data[key] = value;
+                }
+            }
+            
+            // Handle checkboxes
+            const checkboxes = document.querySelectorAll('input[name="challenges"]:checked');
+            data.challenges = Array.from(checkboxes).map(cb => cb.value);
+            
+            // For demo purposes, show an alert
+            alert('Thank you for sharing your story! We will contact you soon at ' + data.email);
+            
+            // In a real implementation, you would send this data to your server
+            console.log('Form submission data:', data);
+        });
+    </script>
 </body>
 </html>
