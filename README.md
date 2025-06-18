@@ -34,3 +34,4 @@ A responsive website for collecting stories from people who have experienced tra
 ## License
 
 Copyright © 2025 Life After Documentary Series
+# lifeafter
