@@ -319,7 +319,7 @@
 
         <section class="questionnaire-section">
             <h2>Share Your Experience</h2>
-            <form id="questionnaire-form">
+            <form id="questionnaire-form" action="https://formspree.io/f/myzjebel" method="POST">
                 <div class="form-group">
                     <label for="name">Name (or preferred pseudonym):</label>
                     <input type="text" id="name" name="name" required>
@@ -432,33 +432,7 @@
     </footer>
 
     <script>
-        document.getElementById('questionnaire-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Collect form data
-            const formData = new FormData(this);
-            const data = {};
-            
-            // Handle regular inputs
-            for (let [key, value] of formData.entries()) {
-                if (key === 'challenges') {
-                    if (!data[key]) data[key] = [];
-                    data[key].push(value);
-                } else {
-                    data[key] = value;
-                }
-            }
-            
-            // Handle checkboxes
-            const checkboxes = document.querySelectorAll('input[name="challenges"]:checked');
-            data.challenges = Array.from(checkboxes).map(cb => cb.value);
-            
-            // For demo purposes, show an alert
-            alert('Thank you for sharing your story! We will contact you soon at ' + data.email);
-            
-            // In a real implementation, you would send this data to your server
-            console.log('Form submission data:', data);
-        });
+        // Formspree integration: no JS needed, form will submit directly
     </script>
 </body>
 </html>
