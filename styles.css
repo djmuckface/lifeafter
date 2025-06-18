@@ -1,0 +1,219 @@
+- {
+  box-sizing: border-box;
+  }
+
+body {
+margin: 0;
+font-family: ‘Segoe UI’, Tahoma, Geneva, Verdana, sans-serif;
+background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+color: #2c3e50;
+line-height: 1.6;
+}
+
+.container {
+max-width: 900px;
+margin: 0 auto;
+background: white;
+box-shadow: 0 0 30px rgba(0,0,0,0.1);
+border-radius: 12px;
+overflow: hidden;
+}
+
+header {
+background: white;
+text-align: center;
+padding: 40px 40px 20px;
+border-bottom: 1px solid #e0e0e0;
+}
+
+.logo {
+max-width: 200px;
+margin: 0 auto;
+display: block;
+}
+
+main {
+padding: 60px 40px;
+}
+
+.description {
+font-size: 1.15em;
+line-height: 1.8;
+color: #555;
+margin-bottom: 50px;
+text-align: justify;
+background: #f8f9fa;
+padding: 30px;
+border-radius: 10px;
+border-left: 4px solid #667eea;
+}
+
+.form-title {
+font-size: 1.8em;
+color: #2c3e50;
+margin-bottom: 30px;
+text-align: center;
+font-weight: 600;
+}
+
+.story-form {
+display: flex;
+flex-direction: column;
+gap: 25px;
+margin-bottom: 60px;
+}
+
+.form-group {
+display: flex;
+flex-direction: column;
+}
+
+.story-form label {
+font-weight: 600;
+color: #333;
+margin-bottom: 8px;
+font-size: 1.05em;
+}
+
+.story-form input,
+.story-form textarea,
+.story-form select {
+padding: 15px;
+font-size: 1em;
+border: 2px solid #e0e0e0;
+border-radius: 8px;
+transition: border-color 0.3s ease, box-shadow 0.3s ease;
+font-family: inherit;
+}
+
+.story-form input:focus,
+.story-form textarea:focus,
+.story-form select:focus {
+outline: none;
+border-color: #667eea;
+box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.story-form textarea {
+min-height: 120px;
+resize: vertical;
+}
+
+.story-form button {
+align-self: center;
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+color: white;
+font-size: 1.2em;
+font-weight: 600;
+border: none;
+border-radius: 50px;
+padding: 18px 40px;
+cursor: pointer;
+transition: all 0.3s ease;
+box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+
+.story-form button:hover {
+transform: translateY(-2px);
+box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+footer {
+background: #2c3e50;
+color: white;
+padding: 50px 40px;
+}
+
+.footer-content {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 40px;
+max-width: 800px;
+margin: 0 auto;
+}
+
+.footer-section h3 {
+font-size: 1.3em;
+margin-bottom: 20px;
+color: #ecf0f1;
+border-bottom: 2px solid #667eea;
+padding-bottom: 10px;
+}
+
+.footer-section p {
+margin-bottom: 15px;
+line-height: 1.6;
+}
+
+.trauma-list,
+.assurance-list {
+list-style: none;
+padding: 0;
+margin: 20px 0;
+}
+
+.trauma-list li,
+.assurance-list li {
+padding: 8px 0;
+border-bottom: 1px solid #34495e;
+position: relative;
+padding-left: 20px;
+}
+
+.trauma-list li:before,
+.assurance-list li:before {
+content: “✓”;
+position: absolute;
+left: 0;
+color: #667eea;
+font-weight: bold;
+}
+
+.footer-section a {
+color: #667eea;
+text-decoration: none;
+font-weight: 600;
+}
+
+.footer-section a:hover {
+text-decoration: underline;
+}
+
+.contact-info {
+text-align: center;
+margin-top: 30px;
+padding-top: 30px;
+border-top: 1px solid #34495e;
+}
+
+.contact-info h4 {
+font-size: 1.1em;
+margin-bottom: 10px;
+color: #ecf0f1;
+}
+
+@media (max-width: 768px) {
+.container {
+margin: 0;
+border-radius: 0;
+}
+
+header {
+padding: 40px 20px;
+}
+
+main {
+padding: 40px 20px;
+}
+
+.footer-content {
+grid-template-columns: 1fr;
+gap: 30px;
+}
+
+footer {
+padding: 40px 20px;
+}
+}

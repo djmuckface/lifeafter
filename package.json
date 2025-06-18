@@ -1,0 +1,17 @@
+{
+  "name": "lifeafter",
+  "version": "1.0.0",
+  "description": "Life After - Share Your Story website",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=3000 --open=/index.html",
+    "dev": "live-server --port=3000 --open=/index.html --watch=.",
+    "serve": "python3 -m http.server 3000"
+  },
+  "keywords": ["mental-health", "documentary", "stories", "recovery"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+} 
