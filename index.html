@@ -349,75 +349,41 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Which mental health challenges have you experienced? (Select all that apply):</label>
-                    <div class="checkbox-group">
+                    <label for="challenges">What types of mental health challenges or trauma-related experiences have been part of your story?</label>
+                    <textarea id="challenges" name="challenges" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="story">What was your path to better mental health?</label>
+                    <textarea id="story" name="story" placeholder="This could include turning points, people, habits, practices, realizations, treatments, and more." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Are you open to sharing your story on camera?</label>
+                    <div class="checkbox-group" style="display: flex; flex-direction: column; gap: 10px;">
                         <div class="checkbox-item">
-                            <input type="checkbox" id="depression" name="challenges" value="depression">
-                            <label for="depression">Depression</label>
+                            <input type="checkbox" id="camera-yes" name="camera" value="Yes">
+                            <label for="camera-yes">Yes</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="anxiety" name="challenges" value="anxiety">
-                            <label for="anxiety">Anxiety</label>
+                            <input type="checkbox" id="camera-no" name="camera" value="No">
+                            <label for="camera-no">No</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="ptsd" name="challenges" value="ptsd">
-                            <label for="ptsd">PTSD</label>
+                            <input type="checkbox" id="camera-maybe" name="camera" value="Maybe">
+                            <label for="camera-maybe">Maybe</label>
                         </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="addiction" name="challenges" value="addiction">
-                            <label for="addiction">Addiction</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="grief" name="challenges" value="grief">
-                            <label for="grief">Grief</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="abuse" name="challenges" value="abuse">
-                            <label for="abuse">Abuse</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="bullying" name="challenges" value="bullying">
-                            <label for="bullying">Bullying</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="job-loss" name="challenges" value="job-loss">
-                            <label for="job-loss">Job Loss</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="miscarriage" name="challenges" value="miscarriage">
-                            <label for="miscarriage">Miscarriage</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="suicide" name="challenges" value="suicide">
-                            <label for="suicide">Suicidal Thoughts</label>
+                        <div class="checkbox-item" style="display: flex; align-items: center; gap: 10px;">
+                            <input type="checkbox" id="camera-other" name="camera" value="Other">
+                            <label for="camera-other">Other</label>
+                            <input type="text" id="camera-other-text" name="camera-other-text" style="flex:1;"/>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="story">Tell us about your transformative journey (brief summary):</label>
-                    <textarea id="story" name="story" placeholder="Share your story of realization, the work you've done, and how you maintain your wellness..." required></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="motivation">What motivates you to share your story?</label>
-                    <textarea id="motivation" name="motivation" placeholder="How do you hope your story will help others?" required></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="comfort-level">How comfortable would you be appearing on camera?</label>
-                    <select id="comfort-level" name="comfort-level" required>
-                        <option value="">Select your comfort level</option>
-                        <option value="very-comfortable">Very comfortable - full face and name</option>
-                        <option value="somewhat-comfortable">Somewhat comfortable - with some privacy measures</option>
-                        <option value="not-comfortable">Not comfortable - voice only or written story</option>
-                        <option value="unsure">Unsure - would like to discuss options</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="additional-info">Any additional information you'd like to share:</label>
-                    <textarea id="additional-info" name="additional-info" placeholder="Anything else you think we should know about your journey or how you'd like to be involved..."></textarea>
+                    <label for="additional-info">Any additional information or questions you have for us?</label>
+                    <textarea id="additional-info" name="additional-info"></textarea>
                 </div>
 
                 <button type="submit" class="submit-btn">Share My Story</button>
