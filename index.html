@@ -278,6 +278,75 @@
                 padding: 30px 20px;
             }
         }
+
+        .intro-text {
+            font-size: 1.3rem;
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        
+        .about-you-section {
+            text-align: left;
+            max-width: 900px;
+            margin: 0 auto 40px;
+        }
+        
+        .about-you-section h3 {
+            font-size: 1.8rem;
+            color: #2b3a4a;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .qualities-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .qualities-list li {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .qualities-list li:before {
+            content: "•";
+            color: #26c6da;
+            font-weight: bold;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+        
+        .call-to-action {
+            text-align: center;
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(38, 198, 218, 0.1);
+            border-radius: 15px;
+            border-left: 4px solid #26c6da;
+        }
+        
+        .call-to-action h3 {
+            font-size: 1.6rem;
+            color: #2b3a4a;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .call-to-action p {
+            font-size: 1.2rem;
+            color: #666;
+            margin: 0;
+        }
     </style>
 </head>
 <body>
@@ -312,23 +381,27 @@
 
         <section class="about-section">
             <h2>Who are we looking for?</h2>
-            <p>
+            <p class="intro-text">
                 Seeking individuals of all ages who have experienced different mental health challenges and found their unique path to healing.
             </p>
-            <p>
-                <strong>About You:</strong><br>
-                ◦ You've been through it. You know how dark and debilitating it can be. You found your way out, despite the odds.<br>
-                ◦ You put in the work, and now you're inspired to help others do the same. Sure, maintenance may be required, but you recognize when your old patterns resurface that you have the toolkit you've developed over time. You want to share the contents of that toolkit with people who need it.<br>
-                ◦ You want to help those who are struggling. Show them what paths are available. Show them that They Are Not Alone.<br>
-                ◦ You align with Life After's mission to provide funding to support care for those who cannot afford it (so many cannot). You want to inspire humans to heal and donors to donate.<br>
-                ◦ You are ready to share your story on camera or in writing.<br>
-                ◦ You know that giving to others is one of the most effective ways to improve our mental health.<br>
-                ◦ You have the grit, depth, and wisdom that come with being a survivor.
-            </p>
-            <p>
-                <strong>Is this you? We want to meet you!<br>
-                Please fill out the form below.</strong>
-            </p>
+            
+            <div class="about-you-section">
+                <h3>About You:</h3>
+                <ul class="qualities-list">
+                    <li>You've been through it. You know how dark and debilitating it can be. You found your way out, despite the odds.</li>
+                    <li>You put in the work, and now you're inspired to help others do the same. Sure, maintenance may be required, but you recognize when your old patterns resurface that you have the toolkit you've developed over time. You want to share the contents of that toolkit with people who need it.</li>
+                    <li>You want to help those who are struggling. Show them what paths are available. Show them that <strong>They Are Not Alone</strong>.</li>
+                    <li>You align with Life After's mission to provide funding to support care for those who cannot afford it (so many cannot). You want to inspire humans to heal and donors to donate.</li>
+                    <li>You are ready to share your story on camera or in writing.</li>
+                    <li>You know that giving to others is one of the most effective ways to improve our mental health.</li>
+                    <li>You have the grit, depth, and wisdom that come with being a survivor.</li>
+                </ul>
+            </div>
+            
+            <div class="call-to-action">
+                <h3>Is this you? We want to meet you!</h3>
+                <p>Please fill out the form below.</p>
+            </div>
         </section>
 
         <section class="questionnaire-section">
